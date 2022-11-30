@@ -19,7 +19,7 @@ def get_sample_position(corpus_filename, on_memory, corpus_lines, stage):
     sample_position = [0]
     if not on_memory:
         print('Loading files for ' + stage + ' Dataset...')
-        with open(corpus_filename, 'r') as f_in:
+        with open(corpus_filename, 'r',encoding='utf-8') as f_in:
             sample_str = f_in.readline()
             while sample_str:
                 sample_position.append(f_in.tell())
@@ -73,7 +73,7 @@ class ClassificationDataset(Dataset):
             raise IndexError
         if not self.on_memory:
             position = self.sample_position[index]
-            with open(self.corpus_file) as f_in:
+            with open(self.corpus_file,encoding='utf-8') as f_in:
                 f_in.seek(position)
                 sample_str = f_in.readline()
         else:

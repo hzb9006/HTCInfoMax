@@ -99,7 +99,7 @@ class Vocab(object):
         """
         for corpus in self.corpus_files.keys():
             mode = 'ALL'
-            with open(self.corpus_files[corpus], 'r') as f_in:
+            with open(self.corpus_files[corpus], 'r',encoding='utf-8') as f_in:
                 logger.info('Loading ' + corpus + ' subset...')
                 for line in tqdm.tqdm(f_in):
                     data = json.loads(line.rstrip())

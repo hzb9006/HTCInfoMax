@@ -159,8 +159,8 @@ def train(config):
 
 
 if __name__ == "__main__":
-    #configs = Configure(config_json_file='config/htcinfomax-wos.json')
-    configs = Configure(config_json_file='config/htcinfomax-rcv1-v2.json')
+    configs = Configure(config_json_file='config/htcinfomax-patent.json')
+    # configs = Configure(config_json_file='config/htcinfomax-rcv1-v2.json')
 
     if configs.train.device_setting.device == 'cuda':
         os.system('CUDA_VISIBLE_DEVICES=' + str(configs.train.device_setting.visible_device_list))
